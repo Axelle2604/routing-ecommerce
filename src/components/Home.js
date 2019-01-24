@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import Product from './Product';
 const axios = require('axios');
 
 class Home extends Component {
@@ -32,7 +34,11 @@ class Home extends Component {
         <h1>HOME PAGE</h1>
         <div>
           {this.state.listProducts.map(product => (
-            <img src={product.image} alt={product.title} key={product.id} />
+            <Product
+              image={product.image}
+              title={product.title}
+              key={product.title}
+            />
           ))}
         </div>
       </div>
